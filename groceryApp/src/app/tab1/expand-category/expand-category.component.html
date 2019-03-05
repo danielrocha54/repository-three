@@ -1,0 +1,37 @@
+<div class="expand-category-name" (click)="emitToogleCategory()">
+	<ion-buttons>
+		<ion-button>
+			<div *ngIf="!expanded">
+				<ion-icon name="arrow-dropdown"></ion-icon>
+			</div>
+			<div *ngIf="expanded">
+				<ion-icon name="arrow-dropup"></ion-icon>
+			</div>
+		</ion-button>
+		{{ name }}
+	</ion-buttons>
+</div>
+
+<ion-grid #expandWrapper class='expand-wrapper' [class.collapsed]="expanded">
+
+	<ion-row *ngFor="let product of products;" align-items-center>
+
+		<ion-col size="5" class="product-name">{{ product.name }}</ion-col>
+
+		<ion-col size="2" class="product-price">{{ product.price }}$</ion-col>
+
+		<ion-col size="5">
+			<ion-buttons>
+				<ion-button (click)="emitAddProduct(product)">
+					<ion-icon name="add-circle-outline"></ion-icon>
+				</ion-button>
+				<div *ngIf="product.quantity > 0">{{ product.quantity }}</div>
+				<ion-button disabled="{{ product.quantity === 0 }}" (click)="emitRemoveProduct(product)">
+					<ion-icon name="remove-circle-outline"></ion-icon>
+				</ion-button>
+			</ion-buttons>
+		</ion-col>
+
+	</ion-row>
+
+</ion-grid>

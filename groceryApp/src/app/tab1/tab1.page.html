@@ -1,0 +1,41 @@
+<ion-toolbar>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col size="2">
+        <ion-icon class="icon-total" name="cart"></ion-icon>
+      </ion-col>
+      <ion-col size="8">
+        <ion-label color="primary">Total: {{ (total$ | async)?.toFixed(2) }}$ ({{ (quantity$ | async) }})</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-buttons slot="end">
+    <ion-button (click)="goToSndPage()" disabled="{{ (quantity$ | async) === 0 }}">
+      <ion-icon name="arrow-round-forward"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item *ngFor ="let category of ( this.cart$ | async )?.categories;" >
+      <app-expand-category class="expand-category"
+        [category_id]="category.id"
+        [category_name]="category.name"
+        [products]="category.products"
+        [expanded]="isExpandedCategory(category.id)"
+
+        (toogleCategory)="toogleExpandCategory(category.id);"
+        (addProduct)="addProductToCart(category.id, $event);"
+        (removeProduct)="removeProductFromCart(category.id, $event);"
+      >
+      </app-expand-category>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

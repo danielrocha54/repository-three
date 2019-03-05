@@ -1,0 +1,222 @@
+<ion-toolbar>
+  <ion-buttons>
+    <ion-button (click)="goToSndPage()">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+
+<ion-content padding>
+
+	<ion-list lines="none">
+
+		<form novalidate (ngSubmit)="onPurchase()" [formGroup]="purchaseForm">
+
+			<!-- FIRST NAME FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>first name: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientFirstName"
+					formControlName="clientFirstName"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientFirstName').hasError('pattern') ||
+							purchaseForm.get('clientFirstName').hasError('required') ) &&
+							purchaseForm.get('clientFirstName').invalid && this.submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientFirstName').hasError('required') && this.submitted">please input your first name</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientFirstName').hasError('pattern') && this.submitted">please input a valid first name</div>
+			</ion-item>
+
+			<!-- FIRST NAME FIELD END -->
+
+			<!-- SECOND NAME FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>last name: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientLastName"
+					formControlName="clientLastName"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientLastName').hasError('pattern') ||
+							purchaseForm.get('clientLastName').hasError('required') ) &&
+							purchaseForm.get('clientLastName').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientLastName').hasError('required') && submitted">please input your second name</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientLastName').hasError('pattern') && submitted">please input a valid second name</div>
+			</ion-item>
+
+			<!-- SECOND NAME FIELD END -->
+
+			<!-- CARD NUMBER FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>card number: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientCardNumber"
+					formControlName="clientCardNumber"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientCardNumber').hasError('pattern') ||
+							purchaseForm.get('clientCardNumber').hasError('required') ) &&
+							purchaseForm.get('clientCardNumber').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientCardNumber').hasError('required')">please input your card number</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientCardNumber').hasError('pattern')">your card number must have 16 digits</div>
+			</ion-item>
+
+			<!-- CARD NUMBER FIELD END -->
+
+			<!-- CARD CV2 FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>cv2: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientCardCV2"
+					formControlName="clientCardCV2"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientCardCV2').hasError('pattern') ||
+							purchaseForm.get('clientCardCV2').hasError('required') ) &&
+							purchaseForm.get('clientCardCV2').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientCardCV2').hasError('required')">please input your card cv2 number</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientCardCV2').hasError('pattern')">your card cv2 must have 3 digits</div>
+			</ion-item>
+
+			<!-- CARD CV2 FIELD END -->
+
+			<!-- EMAIL FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>email: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientEmail"
+					formControlName="clientEmail"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientEmail').hasError('pattern') ||
+							purchaseForm.get('clientEmail').hasError('required') ) &&
+							purchaseForm.get('clientEmail').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientEmail').hasError('required')">please input your email</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientEmail').hasError('pattern')">please input a valid email address</div>
+			</ion-item>
+
+			<!-- EMAIL FIELD END -->
+
+			<!-- STREET FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>street: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientStreet"
+					formControlName="clientStreet"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientStreet').hasError('pattern') ||
+							purchaseForm.get('clientStreet').hasError('required') ) &&
+							purchaseForm.get('clientStreet').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientStreet').hasError('required')">please input your street</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientStreet').hasError('pattern')">please input a valid street</div>
+			</ion-item>
+
+			<!-- STREET FIELD END -->
+
+			<!-- POSTAL CODE FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>postal code: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientPostalCode"
+					formControlName="clientPostalCode"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientPostalCode').hasError('pattern') ||
+							purchaseForm.get('clientPostalCode').hasError('required') ) &&
+							purchaseForm.get('clientPostalCode').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientPostalCode').hasError('required')">please input your postal code</div>
+			</ion-item>
+
+			<!-- POSTAL CODE FIELD END -->
+
+			<!-- CITY FIELD BEGIN -->
+
+			<ion-item>
+				<ion-label class="input-field" floating>city: </ion-label>
+				<ion-input
+					type="text"
+					class="input-field"
+					[(ngModel)]="clientCity"
+					formControlName="clientCity"></ion-input>
+			</ion-item>
+			<ion-item
+				no-lines
+				*ngIf="(	purchaseForm.get('clientCity').hasError('pattern') ||
+							purchaseForm.get('clientCity').hasError('required') ) &&
+							purchaseForm.get('clientCity').invalid && submitted">
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientCity').hasError('required')">please input your city</div>
+				<div
+					class="error"
+					*ngIf="	purchaseForm.get('clientCity').hasError('pattern')">please input a valid city</div>
+			</ion-item>
+
+			<!-- CITY FIELD END -->
+
+			<ion-button
+				type="submit"
+				size="small"
+				color="primary"
+				block>finish</ion-button>
+		</form>
+
+	</ion-list>
+
+</ion-content>

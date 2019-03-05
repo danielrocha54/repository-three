@@ -1,0 +1,65 @@
+
+<ion-content>
+
+    <ion-grid>
+      <ion-row align-items-center>
+        <ion-col size="1" offset="1">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/favicon.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/angular.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/typescript.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/redux.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/nodejs.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/spring.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/java.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/mysql.png"></ion-img>
+        </ion-col>
+        <ion-col size="1" class="product-name">
+          <ion-img style="width: 25px; height: 25px;" src="/assets/icon/fedora.png"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-title>Welcome to the Ionic App</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>This app allow you to buy products in tree steps described bellow</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon slot="start" color="medium" name="list"></ion-icon>
+        <ion-label class="loading-text">select the products to buy</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="medium" name="checkmark"></ion-icon>
+        <ion-label class="loading-text">confirm the products selected</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="medium" name="send"></ion-icon>
+        <ion-label class="loading-text">finish the purchase</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-button
+          size="medium"
+          color="primary"
+          block
+          (click)="goToFstPage()">start</ion-button>
+      </ion-item>
+    </ion-list>
+</ion-content>

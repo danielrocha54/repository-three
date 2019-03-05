@@ -1,0 +1,27 @@
+expand-category {
+
+    .expand-wrapper {
+        transition: 0.2s linear;
+    }   
+
+    .collapsed {
+        height: 0 !important;
+    }
+
+}
+
+.expand-category-name {
+	padding-top: 15px;
+}
+
+.product-name {
+	font-size: small;
+}
+
+.product-price {
+	font-size: smaller;	
+}
+
+.product-quantity {
+	font-size: small;
+}

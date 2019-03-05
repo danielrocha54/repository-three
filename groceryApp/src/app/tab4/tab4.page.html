@@ -1,0 +1,42 @@
+
+<ion-content padding>
+	<ion-grid>
+		<div *ngIf="( success$ | async ) === true">
+			<ion-row align-items-center>
+				<ion-col size="12">
+					<ion-icon class="center-icon" name="checkmark-circle-outline"></ion-icon>
+				</ion-col>
+			</ion-row>
+			<ion-row align-items-center>
+				<ion-col size="11" offset="1">
+					<p>purchase finished with success</p>
+				</ion-col>
+			</ion-row>
+		</div>
+
+		<div *ngIf="( error$ | async ) === true">
+			<ion-row align-items-center>
+				<ion-col size="12">
+					<ion-icon class="center-icon" name="close"></ion-icon>
+				</ion-col>
+			</ion-row>
+			<ion-row align-items-center>
+				<ion-col size="10" offset="2">
+					<p>something went wrong...</p>
+				</ion-col>
+			</ion-row>
+		</div>
+
+		<ion-row align-items-center>
+			<ion-col size="6" offset="3">
+				<ion-button
+				type="submit"
+				size="small"
+				color="primary"
+				(click)="goToHomePage()"
+				block>home page</ion-button>
+			</ion-col>
+		</ion-row>
+
+	</ion-grid>
+</ion-content>
